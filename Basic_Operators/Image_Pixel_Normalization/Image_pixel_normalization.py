@@ -1,6 +1,6 @@
 # IMAGE PIXEL NORMALIZATION
 # Elimize aldığımız resimlerin temsil şekillerini normalize ediyor olucaz.
-# Resmin ana özelliklerini kkoruyup gösterim şekillerini değiştiriyoruz.
+# Resmin ana özelliklerini koruyup gösterim şekillerini değiştiriyoruz.
 import cv2 as cv
 import numpy as np
 
@@ -50,6 +50,7 @@ cv.waitKey(1)
 # NORM_L1
 dst = np.zeros(gray.shape, dtype=np.float32)
 cv.normalize(gray, dst=dst, alpha=1.0, beta=0, norm_type=cv.NORM_L1)
+
 print(dst)
 cv.imshow("NORM_L1", np.uint8(dst*10000000))
 cv.waitKey(1)
